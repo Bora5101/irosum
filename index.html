@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bizim Hikaye - 1. Ayımız</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Matisse&display=swap');
+  body {
+    margin: 0;
+    font-family: 'Matisse', cursive, 'Arial', sans-serif;
+    background: #ffe6e6;
+    color: #880000;
+    transition: background-color 0.5s, color 0.5s;
+  }
+  body.dark { background: #330000; color: #ffcccc; }
+  header { text-align: center; padding: 20px; }
+  header h1 {
+    font-family: 'Parisienne', cursive;
+    font-size: 3em;
+    margin: 0;
+    color: #cc0033;
+  }
+  .photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+  }
+  .photos img {
+    max-width: 150px;
+    border-radius: 15px;
+    box-shadow: 0 0 8px #cc0033;
+  }
+  .memory {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #ffd6d6;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #cc0033;
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+  button {
+    background: #cc0033;
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 12px;
+    margin: 10px auto;
+    display: block;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  button:hover { background: #ff3366; }
+  .theme-switcher {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    user-select: none;
+  }
+  .hidden-message {
+    text-align: center;
+    margin: 15px;
+    font-style: italic;
+    color: #990022;
+  }
+  .diary {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #ffe0e0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #cc0033;
+  }
+  textarea {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    border: 2px solid #cc0033;
+    padding: 10px;
+    font-size: 1em;
+    resize: vertical;
+  }
+  .video-section, .audio-section {
+    max-width: 600px;
+    margin: 25px auto;
+    text-align: center;
+  }
+  video, audio {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #cc0033;
+  }
+  .hidden-section {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
+  }
+  .hidden-input {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: 2px solid #cc0033;
+    width: 200px;
+  }
+  .hidden-button {
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    background: #cc0033;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .hidden-content {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #cc0033;
+    font-weight: bold;
+  }
+  .heart {
+    position: fixed;
+    color: #cc0033;
+    font-size: 24px;
+    animation: floatUp 3s linear forwards;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 0.8;}
+    100% { transform: translateY(-150px) scale(1.5); opacity: 0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="theme-switcher" title="Tema Değiştir">🌙</div>
+
+<header>
+  <h1>1. Ayımız - Bizim Hikaye</h1>
+</header>
+
+<section class="photos">
+  <img src="1.jpg" alt="Anı 1" />
+  <img src="2.jpg" alt="Anı 2" />
+  <img src="3.jpg" alt="Anı 3" />
+  <img src="4.jpg" alt="Anı 4" />
+</section>
+
+<section class="memory">
+  <p>Sevgilim, bizim ilk ayımızda paylaştığımız tüm güzel anılar için teşekkür ederim. Daha nice güzel günlere birlikte... 💖</p>
+</section>
+
+<button id="playMusic">🎶 Müziği Başlat</button>
+
+<section class="diary">
+  <h2>Anı Günlüğü</h2>
+  <textarea id="diaryEntry" placeholder="Buraya anılarınızı yazabilirsiniz..."></textarea>
+  <button id="saveDiary">Kaydet</button>
+</section>
+
+<section class="video-section">
+  <h2>Video</h2>
+  <video controls>
+    <source src="video.mp4" type="video/mp4" />
+    Tarayıcınız video oynatmayı desteklemiyor.
+  </video>
+</section>
+
+<section class="audio-section">
+  <h2>Sesli Mesaj</h2>
+  <audio controls>
+    <source src="ses.mp3" type="audio/mpeg" />
+    Tarayıcınız ses oynatmayı desteklemiyor.
+  </audio>
+</section>
+
+<section class="hidden-section">
+  <h2>Gizli Bölüm</h2>
+  <input type="password" id="secretInput" class="hidden-input" placeholder="Şifreyi gir" />
+  <button id="secretBtn" class="hidden-button">Göster</button>
+  <div id="secretContent" class="hidden-content"></div>
+</section>
+
+<div class="hidden-message" id="popupMessage"></div>
+
+<script>
+  const themeSwitcher = document.querySelector('.theme-switcher');
+  themeSwitcher.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    themeSwitcher.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  });
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 3000);
+  }
+  setInterval(createHeart, 500);
+
+  const music = new Audio('bizimsarkimiz.mp3');
+  const playBtn = document.getElementById('playMusic');
+  playBtn.addEventListener('click', () => {
+    music.play();
+  });
+
+  const diaryEntry = document.getElementById('diaryEntry');
+  const saveDiary = document.getElementById('saveDiary');
+  window.onload = () => {
+    const saved = localStorage.getItem('diaryEntry');
+    if (saved) diaryEntry.value = saved;
+  };
+  saveDiary.addEventListener('click', () => {
+    localStorage.setItem('diaryEntry', diaryEntry.value);
+    alert('Anılar kaydedildi!');
+  });
+
+  const secretBtn = document.getElementById('secretBtn');
+  const secretInput = document.getElementById('secretInput');
+  const secretContent = document.getElementById('secretContent');
+  secretBtn.addEventListener('click', () => {
+    if(secretInput.value.toLowerCase() === 'irem') {
+      secretContent.textContent = 'Gizli mesaj: Seni çok seviyorum, hayatımın anlamı ❤️';
+    } else {
+      secretContent.textContent = 'Şifre yanlış, tekrar dene.';
+    }
+  });
+
+  const popupMessage = document.getElementById('popupMessage');
+  function showMessage(msg) {
+    popupMessage.textContent = msg;
+    popupMessage.style.opacity = 1;
+    setTimeout(() => {
+      popupMessage.style.opacity = 0;
+    }, 3000);
+  }
+  playBtn.addEventListener('click', () => {
+    showMessage('Müzik başladı, sevgilimle güzel anlar için...');
+  });
+</script>
+
+</body>
+</html>
