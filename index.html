@@ -1,252 +1,245 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bizim Hikaye - 1. Ayımız</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Matisse&display=swap');
-  body {
-    margin: 0;
-    font-family: 'Matisse', cursive, 'Arial', sans-serif;
-    background: #ffe6e6;
-    color: #880000;
-    transition: background-color 0.5s, color 0.5s;
-  }
-  body.dark { background: #330000; color: #ffcccc; }
-  header { text-align: center; padding: 20px; }
-  header h1 {
-    font-family: 'Parisienne', cursive;
-    font-size: 3em;
-    margin: 0;
-    color: #cc0033;
-  }
-  .photos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px;
-  }
-  .photos img {
-    max-width: 150px;
-    border-radius: 15px;
-    box-shadow: 0 0 8px #cc0033;
-  }
-  .memory {
-    max-width: 600px;
-    margin: 20px auto;
-    background: #ffd6d6;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #cc0033;
-    font-size: 1.2em;
-    line-height: 1.5em;
-  }
-  button {
-    background: #cc0033;
-    border: none;
-    color: #fff;
-    padding: 12px 20px;
-    font-size: 1.1em;
-    border-radius: 12px;
-    margin: 10px auto;
-    display: block;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  button:hover { background: #ff3366; }
-  .theme-switcher {
-    position: fixed;
-    top: 10px;
-    right: 15px;
-    cursor: pointer;
-    font-size: 1.5em;
-    user-select: none;
-  }
-  .hidden-message {
-    text-align: center;
-    margin: 15px;
-    font-style: italic;
-    color: #990022;
-  }
-  .diary {
-    max-width: 600px;
-    margin: 20px auto;
-    background: #ffe0e0;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 8px #cc0033;
-  }
-  textarea {
-    width: 100%;
-    height: 120px;
-    border-radius: 10px;
-    border: 2px solid #cc0033;
-    padding: 10px;
-    font-size: 1em;
-    resize: vertical;
-  }
-  .video-section, .audio-section {
-    max-width: 600px;
-    margin: 25px auto;
-    text-align: center;
-  }
-  video, audio {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #cc0033;
-  }
-  .hidden-section {
-    max-width: 600px;
-    margin: 30px auto;
-    text-align: center;
-  }
-  .hidden-input {
-    padding: 10px;
-    font-size: 1em;
-    border-radius: 10px;
-    border: 2px solid #cc0033;
-    width: 200px;
-  }
-  .hidden-button {
-    padding: 10px 15px;
-    font-size: 1em;
-    border-radius: 10px;
-    border: none;
-    background: #cc0033;
-    color: white;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-  .hidden-content {
-    margin-top: 15px;
-    font-size: 1.1em;
-    color: #cc0033;
-    font-weight: bold;
-  }
-  .heart {
-    position: fixed;
-    color: #cc0033;
-    font-size: 24px;
-    animation: floatUp 3s linear forwards;
-    opacity: 0.8;
-    pointer-events: none;
-  }
-  @keyframes floatUp {
-    0% { transform: translateY(0) scale(1); opacity: 0.8;}
-    100% { transform: translateY(-150px) scale(1.5); opacity: 0;}
-  }
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>26.06.2025 - İlk Ayımız</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: #fff0f5;
+        color: #8b005d;
+        text-align: center;
+      }
+      header {
+        padding: 30px;
+      }
+      h1 {
+        font-family: "Merienda", cursive;
+        font-size: 36px;
+        color: #d81e5b;
+      }
+      #sayac {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      button {
+        background: #ff4f81;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px;
+      }
+      button:hover {
+        background-color: #e04370;
+      }
+      audio,
+      video {
+        margin: 10px 0;
+      }
+      .galeri {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 20px;
+      }
+      .galeri div {
+        font-size: 14px;
+      }
+      .notlar,
+      .gecmismektup,
+      .gizlibolum {
+        margin: 20px auto;
+        max-width: 600px;
+        background: #ffe6f2;
+        padding: 15px;
+        border-radius: 12px;
+      }
+      .kalpler {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: -1;
+      }
+      .kalp {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background: red;
+        transform: rotate(45deg);
+        animation: kalpyag 10s linear infinite;
+      }
+      .kalp::before,
+      .kalp::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background: red;
+        border-radius: 50%;
+      }
+      .kalp::before {
+        top: -10px;
+        left: 0;
+      }
+      .kalp::after {
+        top: 0;
+        left: -10px;
+      }
+      @keyframes kalpyag {
+        0% {
+          top: -10%;
+          opacity: 1;
+        }
+        100% {
+          top: 110%;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kalpler"></div>
+    <header>
+      <h1>26.06.2025 - İlk Ayımız</h1>
+      <div id="sayac"></div>
+      <button onclick="muzik.play()">🎶 Müziği Başlat</button>
+      <audio id="muzik" loop>
+        <source
+          src="bizimşarkımız.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+      <button onclick="alert('Seni çok seviyorum, iyi ki varsın ❤️')">
+        ❤️ Sürpriz Mesaj
+      </button>
+      <button onclick="toggleTema()">🌙 Tema Değiştir</button>
+    </header>
 
-<div class="theme-switcher" title="Tema Değiştir">🌙</div>
+    <section class="galeri">
+      <div>
+        <img src="1.jpg" width="100%" />
+        <p>İlk sarıldığımız gün 🥺</p>
+      </div>
+      <div>
+        <img src="2.jpg" width="100%" />
+        <p>Göz göze geldiğimiz ilk an 💞</p>
+      </div>
+      <div>
+        <img src="3.jpg" width="100%" />
+        <p>Parkta birlikte geçirdiğimiz zaman 🌳</p>
+      </div>
+      <div>
+        <img src="4.jpg" width="100%" />
+        <p>Gecenin en güzel anı 💫</p>
+      </div>
+    </section>
 
-<header>
-  <h1>1. Ayımız - Bizim Hikaye</h1>
-</header>
+    <section class="notlar">
+      <h3>📝 Anı Günlüğü</h3>
+      <p>
+        Seni ilk gördüğümde heyecandan konuşamadım. Zaman geçtikçe sana daha da
+        bağlandım. Her şeyinle, gülüşünle, kokunla kalbimde yer edindin. Daha
+        nice anılar biriktireceğiz 💖
+      </p>
+    </section>
 
-<section class="photos">
-  <img src="1.jpg" alt="Anı 1" />
-  <img src="2.jpg" alt="Anı 2" />
-  <img src="3.jpg" alt="Anı 3" />
-  <img src="4.jpg" alt="Anı 4" />
-</section>
+    <section class="gecmismektup">
+      <h3>📩 Geleceğe Mektup</h3>
+      <p>
+        Sevgilim, bu satırları sana 1. ayımızda yazıyorum. Belki şu an 2.
+        yılımızı kutluyoruz, belki de evlenmişiz. Ama şunu bil: seni ilk günkü
+        gibi seveceğim. Sonsuza kadar seninim 💍
+      </p>
+    </section>
 
-<section class="memory">
-  <p>Sevgilim, bizim ilk ayımızda paylaştığımız tüm güzel anılar için teşekkür ederim. Daha nice güzel günlere birlikte... 💖</p>
-</section>
+    <section>
+      <h3>🎥 Video Anımız</h3>
+      <video controls width="300">
+        <source
+          src="video.mp4"
+          type="video/mp4"
+        />
+        Tarayıcınız video oynatmayı desteklemiyor.
+      </video>
+    </section>
 
-<button id="playMusic">🎶 Müziği Başlat</button>
+    <section>
+      <h3>🎙️ Sesli Mesajım</h3>
+      <audio controls>
+        <source
+          src="ses.mp3"
+          type="audio/mpeg"
+        />
+        Tarayıcınız ses oynatmayı desteklemiyor.
+      </audio>
+    </section>
 
-<section class="diary">
-  <h2>Anı Günlüğü</h2>
-  <textarea id="diaryEntry" placeholder="Buraya anılarınızı yazabilirsiniz..."></textarea>
-  <button id="saveDiary">Kaydet</button>
-</section>
+    <section class="gizlibolum">
+      <h3>🔐 Gizli Bölüm</h3>
+      <input type="password" id="sifre" placeholder="Şifreyi gir" />
+      <button onclick="gizliAc()">Göster</button>
+      <div id="gizliMesaj" style="display: none; margin-top: 10px">
+        💍 Hazır mısın? Çünkü bir gün bu sitede sana evlenme teklifi edeceğim.
+        Seni ölene dek seveceğim.
+      </div>
+    </section>
 
-<section class="video-section">
-  <h2>Video</h2>
-  <video controls>
-    <source src="video.mp4" type="video/mp4" />
-    Tarayıcınız video oynatmayı desteklemiyor.
-  </video>
-</section>
+    <script>
+      const muzik = document.getElementById("muzik");
 
-<section class="audio-section">
-  <h2>Sesli Mesaj</h2>
-  <audio controls>
-    <source src="ses.mp3" type="audio/mpeg" />
-    Tarayıcınız ses oynatmayı desteklemiyor.
-  </audio>
-</section>
+      function sayacGuncelle() {
+        const baslangic = new Date("2025-05-26T00:00:00");
+        const simdi = new Date();
+        const fark = simdi - baslangic;
+        const gun = Math.floor(fark / (1000 * 60 * 60 * 24));
+        const saat = Math.floor((fark / (1000 * 60 * 60)) % 24);
+        const dakika = Math.floor((fark / (1000 * 60)) % 60);
+        const saniye = Math.floor((fark / 1000) % 60);
+        document.getElementById(
+          "sayac"
+        ).textContent = `${gun} gün ${saat} saat ${dakika} dakika ${saniye} saniye geçmiş 💘`;
+      }
+      setInterval(sayacGuncelle, 1000);
+      sayacGuncelle();
 
-<section class="hidden-section">
-  <h2>Gizli Bölüm</h2>
-  <input type="password" id="secretInput" class="hidden-input" placeholder="Şifreyi gir" />
-  <button id="secretBtn" class="hidden-button">Göster</button>
-  <div id="secretContent" class="hidden-content"></div>
-</section>
+      function gizliAc() {
+        const sifre = document.getElementById("sifre").value;
+        if (sifre === "irem") {
+          document.getElementById("gizliMesaj").style.display = "block";
+        } else {
+          alert("Yanlış şifre canım 💔");
+        }
+      }
 
-<div class="hidden-message" id="popupMessage"></div>
+      function toggleTema() {
+        const g = document.body.style;
+        g.background = g.background === "black" ? "#fff0f5" : "black";
+        g.color = g.color === "white" ? "#8b005d" : "white";
+      }
 
-<script>
-  const themeSwitcher = document.querySelector('.theme-switcher');
-  themeSwitcher.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    themeSwitcher.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-  });
-
-  function createHeart() {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.style.left = Math.random() * window.innerWidth + 'px';
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 3000);
-  }
-  setInterval(createHeart, 500);
-
-  const music = new Audio('bizimsarkimiz.mp3');
-  const playBtn = document.getElementById('playMusic');
-  playBtn.addEventListener('click', () => {
-    music.play();
-  });
-
-  const diaryEntry = document.getElementById('diaryEntry');
-  const saveDiary = document.getElementById('saveDiary');
-  window.onload = () => {
-    const saved = localStorage.getItem('diaryEntry');
-    if (saved) diaryEntry.value = saved;
-  };
-  saveDiary.addEventListener('click', () => {
-    localStorage.setItem('diaryEntry', diaryEntry.value);
-    alert('Anılar kaydedildi!');
-  });
-
-  const secretBtn = document.getElementById('secretBtn');
-  const secretInput = document.getElementById('secretInput');
-  const secretContent = document.getElementById('secretContent');
-  secretBtn.addEventListener('click', () => {
-    if(secretInput.value.toLowerCase() === 'irem') {
-      secretContent.textContent = 'Gizli mesaj: Seni çok seviyorum, hayatımın anlamı ❤️';
-    } else {
-      secretContent.textContent = 'Şifre yanlış, tekrar dene.';
-    }
-  });
-
-  const popupMessage = document.getElementById('popupMessage');
-  function showMessage(msg) {
-    popupMessage.textContent = msg;
-    popupMessage.style.opacity = 1;
-    setTimeout(() => {
-      popupMessage.style.opacity = 0;
-    }, 3000);
-  }
-  playBtn.addEventListener('click', () => {
-    showMessage('Müzik başladı, sevgilimle güzel anlar için...');
-  });
-</script>
-
-</body>
+      // Kalp animasyonu oluştur
+      setInterval(() => {
+        const kalp = document.createElement("div");
+        kalp.classList.add("kalp");
+        kalp.style.left = Math.random() * 100 + "vw";
+        kalp.style.animationDuration = Math.random() * 5 + 5 + "s";
+        document.querySelector(".kalpler").appendChild(kalp);
+        setTimeout(() => kalp.remove(), 10000);
+      }, 300);
+    </script>
+  </body>
 </html>
