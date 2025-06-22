@@ -117,11 +117,9 @@
       <h1>26.06.2025 - İlk Ayımız</h1>
       <div id="sayac"></div>
       <button onclick="muzik.play()">🎶 Müziği Başlat</button>
-      <audio id="muzik" loop>
-        <source
-          src="bizimşarkımız.mp3"
-          type="audio/mpeg"
-        />
+      <audio id="muzik" autoplay loop>
+        <source src="bizimsarkimiz.mp3" type="audio/mpeg" />
+        Tarayıcınız desteklemiyor.
       </audio>
       <button onclick="alert('Seni çok seviyorum, iyi ki varsın ❤️')">
         ❤️ Sürpriz Mesaj
@@ -132,19 +130,19 @@
     <section class="galeri">
       <div>
         <img src="1.jpg" width="100%" />
-        <p>İlk sarıldığımız gün 🥺</p>
+        <p>💞</p>
       </div>
       <div>
         <img src="2.jpg" width="100%" />
-        <p>Göz göze geldiğimiz ilk an 💞</p>
+        <p>💞</p>
       </div>
       <div>
         <img src="3.jpg" width="100%" />
-        <p>Parkta birlikte geçirdiğimiz zaman 🌳</p>
+        <p>💞</p>
       </div>
       <div>
         <img src="4.jpg" width="100%" />
-        <p>Gecenin en güzel anı 💫</p>
+        <p>💞</p>
       </div>
     </section>
 
@@ -169,10 +167,7 @@
     <section>
       <h3>🎥 Video Anımız</h3>
       <video controls width="300">
-        <source
-          src="video.mp4"
-          type="video/mp4"
-        />
+        <source src="video.mp4" type="video/mp4" />
         Tarayıcınız video oynatmayı desteklemiyor.
       </video>
     </section>
@@ -180,10 +175,7 @@
     <section>
       <h3>🎙️ Sesli Mesajım</h3>
       <audio controls>
-        <source
-          src="ses.mp3"
-          type="audio/mpeg"
-        />
+        <source src="ses.mp3" type="audio/mpeg" />
         Tarayıcınız ses oynatmayı desteklemiyor.
       </audio>
     </section>
@@ -194,7 +186,9 @@
       <button onclick="gizliAc()">Göster</button>
       <div id="gizliMesaj" style="display: none; margin-top: 10px">
         💍 Hazır mısın? Çünkü bir gün bu sitede sana evlenme teklifi edeceğim.
-        Seni ölene dek seveceğim.
+        Seni ölene dek seveceğim. İyiki varsın iyiki hayatımdasın Sevgilim.
+        Bugün 1. ayımız ama belkide Bu siteye sıllar sonra girip bakcaz dicez ki ne günlerdi be 
+        her ne olursa olsun yanındayım Beni bırakma olurmu sevgilim.
       </div>
     </section>
 
@@ -209,9 +203,8 @@
         const saat = Math.floor((fark / (1000 * 60 * 60)) % 24);
         const dakika = Math.floor((fark / (1000 * 60)) % 60);
         const saniye = Math.floor((fark / 1000) % 60);
-        document.getElementById(
-          "sayac"
-        ).textContent = `${gun} gün ${saat} saat ${dakika} dakika ${saniye} saniye geçmiş 💘`;
+        document.getElementById("sayac").textContent =
+          `${gun} gün ${saat} saat ${dakika} dakika ${saniye} saniye geçmiş 💘`;
       }
       setInterval(sayacGuncelle, 1000);
       sayacGuncelle();
@@ -231,7 +224,6 @@
         g.color = g.color === "white" ? "#8b005d" : "white";
       }
 
-      // Kalp animasyonu oluştur
       setInterval(() => {
         const kalp = document.createElement("div");
         kalp.classList.add("kalp");
